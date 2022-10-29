@@ -4,9 +4,6 @@ from utils.eval_utils import print_confusion_matrix
 from sklearn.metrics import classification_report
 
 eval_df = pd.read_excel("/Users/baset/Downloads/df_APPL_validation_aapl_only_model.xlsx")
-correct = 0
-wrong = 0
-neutral = 0
 LABELS = ['positive', 'negative', 'neutral']
 eval_df['model_sentiment'] = eval_df['model_sentiment'].apply(lambda x: x.strip())
 eval_df['sentiment'] = eval_df['sentiment'].apply(lambda x: x.lower())
