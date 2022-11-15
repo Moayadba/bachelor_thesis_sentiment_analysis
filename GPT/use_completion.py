@@ -25,7 +25,7 @@ errors = []
 openai.organization = ORG_ID
 openai.api_key = OPENAI_API_KEY
 prompt_ending = "-> \n\n###\n\n "
-df = pd.read_excel("/Users/baset/Desktop/AAPL_complete_dataset_cleanedup.xlsx")
+df = pd.read_excel("/Users/baset/Desktop/Kursanis Thesis/Datasets/manually evalueated/follow_manual_evaluation_AAPL.xlsx")
 #df = df.rename(columns={'full_text_x': 'full_text', 'text_processed_x': 'text_processed', 'sentiment_x': 'sentiment'})
 result_df = pd.DataFrame()
 for i, row in df.iterrows():
@@ -49,5 +49,5 @@ for i, row in df.iterrows():
         time.sleep(5)
         continue
 
-result_df.to_excel("/Users/baset/Downloads/df_APPL_whole_dataset_gpt_babbage_complete_babbage.xlsx")
+result_df.to_excel("/Users/baset/Downloads/df_APPL_follow_up_eval.xlsx")
 #result_df.to_excel("/Users/baset/Downloads/df_1_unique_gpt_babbage_2.xlsx")

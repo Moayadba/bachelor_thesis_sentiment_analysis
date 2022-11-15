@@ -2,14 +2,6 @@ import pandas as pd
 import json
 
 import scipy
-from sklearn.preprocessing import StandardScaler
-
-from utils.data_prcessing import prepare_df
-import numpy as np
-import matplotlib
-import matplotlib.pyplot as plt
-import yfinance as yf
-from scipy.signal import savgol_filter
 import statsmodels.api as sm
 from scipy import signal
 from numpy.random import default_rng
@@ -21,6 +13,14 @@ import pandas as pd
 from scipy.signal import correlate
 from scipy.signal import correlation_lags
 from sklearn import preprocessing
+from sklearn.preprocessing import StandardScaler
+
+from utils.data_prcessing import prepare_df
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+import yfinance as yf
+from scipy.signal import savgol_filter
 
 #variables
 ticker = "AAPL"
