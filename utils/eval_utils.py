@@ -38,4 +38,4 @@ def print_confusion_matrix(confusion_matrix, class_names, figsize=(5, 5), fontsi
     heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=0, ha='right', fontsize=fontsize)
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-    return fig
+    plt.show()

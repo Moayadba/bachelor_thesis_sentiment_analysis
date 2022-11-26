@@ -15,7 +15,7 @@ from scipy.signal import correlation_lags
 from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
 
-from utils.data_prcessing import prepare_df
+from utils.data_prcessing_utils import prepare_df
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
