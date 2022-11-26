@@ -1,0 +1,12 @@
+jupyter
+pandas
+nltk
+tqdm
+ipykernel
+joblib
+scikit-learn
+spacy
+torch
+textblob
+transformers
+numpy

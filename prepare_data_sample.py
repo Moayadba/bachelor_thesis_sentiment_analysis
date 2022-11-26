@@ -12,12 +12,6 @@ emojis_mapping = {'<U+0001F319>':'\U0001F319','<U+0001F98D>':'\U0001F98D','<U+00
 
 
 
-# GME_df = pd.read_csv('/Users/baset/Desktop/Kursanis Thesis/Abschlussarbeit Reddit/GME_v2.csv')
-# AAPL_df = pd.read_csv('/Users/baset/Desktop/Kursanis Thesis/Abschlussarbeit Reddit/AAPL.csv')
-#
-# GME_sample = prepare_df(GME_df, exclude_list, 300)
-# AAPL_sample = prepare_df(AAPL_df, exclude_list, 300)
-
 final_sample = pd.concat([GME_sample, AAPL_sample], ignore_index=True, sort=False)
 
 sample_1 = final_sample[0:200]

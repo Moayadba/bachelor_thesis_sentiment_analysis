@@ -25,7 +25,7 @@ errors = []
 openai.organization = ORG_ID
 openai.api_key = OPENAI_API_KEY
 prompt_ending = "-> \n\n###\n\n "
-df = pd.read_excel("/Users/baset/Desktop/Kursanis Thesis/Datasets/manually evalueated/follow_manual_evaluation_AAPL.xlsx")
+df = pd.read_csv("/Users/baset/Desktop/Kursanis Thesis/Datasets/validatation/GME_final_validation_sample_equal_dist_3.csv")
 #df = df.rename(columns={'full_text_x': 'full_text', 'text_processed_x': 'text_processed', 'sentiment_x': 'sentiment'})
 result_df = pd.DataFrame()
 for i, row in df.iterrows():
@@ -38,8 +38,8 @@ for i, row in df.iterrows():
             max_tokens=1)
 
         model_sentiment = response.choices[0].text
-        #row_eval = row[["id", "full_text", "text_processed", "sentiment"]]
-        row_eval = row[["id", "full_text", "text_processed", "text_cleaned"]]
+        row_eval = row[["id", "full_text", "text_processed", "sentiment"]]
+        #row_eval = row[["id", "full_text", "text_processed"]]
         row_eval["model_sentiment"] = model_sentiment
         result_df = result_df.append(row_eval, ignore_index=True)
         print("processing the row num: {}",format(str(i)))
@@ -49,5 +49,5 @@ for i, row in df.iterrows():
         time.sleep(5)
         continue
 
-result_df.to_excel("/Users/baset/Downloads/df_APPL_follow_up_eval.xlsx")
+result_df.to_csv("/Users/baset/Desktop/Kursanis Thesis/Datasets/validatation/GME_final_validation_sample_equal_dist_prediction_4.csv")
 #result_df.to_excel("/Users/baset/Downloads/df_1_unique_gpt_babbage_2.xlsx")

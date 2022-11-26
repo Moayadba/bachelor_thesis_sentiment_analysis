@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def print_confusion_matrix(confusion_matrix, class_names, figsize=(10, 7), fontsize=14):
+def print_confusion_matrix(confusion_matrix, class_names, figsize=(5, 5), fontsize=10):
     """Prints a confusion matrix, as returned by sklearn.metrics.confusion_matrix, as a heatmap.
 
     Arguments
@@ -34,9 +34,8 @@ def print_confusion_matrix(confusion_matrix, class_names, figsize=(10, 7), fonts
         heatmap = sns.heatmap(df_cm, annot=True, fmt="d")
     except ValueError:
         raise ValueError("Confusion matrix values must be integers.")
-    heatmap.yaxis.set_ticklabels(heatmap.yaxis.get_ticklabels(), rotation=0, ha='right', fontsize=fontsize)
-    heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=45, ha='right', fontsize=fontsize)
-    plt.title('Confusion Matrix')
+    heatmap.yaxis.set_ticklabels(heatmap.yaxis.get_ticklabels(), rotation=90, ha='right', fontsize=fontsize)
+    heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=0, ha='right', fontsize=fontsize)
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     return fig

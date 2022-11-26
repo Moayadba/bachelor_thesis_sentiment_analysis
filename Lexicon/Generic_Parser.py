@@ -39,7 +39,8 @@ import datetime as dt
 import MOD_Load_MasterDictionary_v2022 as LM
 import pandas as pd
 # User defined directory for files to be parsed
-TARGET_FILE = '/Users/baset/Downloads/sample_1.xlsx'
+TARGET_FILE = '/Users/baset/Desktop/Kursanis Thesis/Datasets/validatation/GME_final_validation_sample_equal_dist_3.csv'
+
 # User defined file pointer to LM dictionary
 MASTER_DICTIONARY_FILE = 'Loughran-McDonald_MasterDictionary_1993-2021.csv'
 # User defined output file
@@ -61,18 +62,18 @@ def main():
     #     print(f'{n_files:,} : {file}')
     output_df = pd.DataFrame()
     file = TARGET_FILE
-    df = pd.read_excel(file)
+    df = pd.read_csv(file)
     for i, row  in df.iterrows():
         text = row['full_text']
         output_data = get_data(text)
         output_data[0] = text
         output_data[1] = len(text)
         output_series = map_column(output_data)
-        result = pd.concat([row, output_series], ignore_index=False)
+        model_sentiment = get_final_sentiment(output_series)
+        result = pd.concat([row, model_sentiment, output_series], ignore_index=False)
         output_df = output_df.append(result, ignore_index=True)
-        if i == 1000:
-            break
-    output_df.to_csv("/Users/baset/Downloads/sample_1_result.csv")
+    output_df = output_df[['id', 'full_text', 'text_processed', 'sentiment', 'model_sentiment']]
+    output_df.to_csv("/Users/baset/Desktop/Kursanis Thesis/Datasets/validatation/GME_final_validation_sample_equal_dist_prediction_lexicon.csv")
 
 
 
@@ -122,7 +123,7 @@ def get_data(doc):
 def map_column(output_data):
     result = pd.Series()
     result['full_text'] = output_data[0]
-    result['sentiment'] = output_data[1]
+    result['text length'] = output_data[1]
     result['number of words'] = output_data[2]
     result['% negative'] = output_data[3]
     result['% positive'] = output_data[4]
@@ -139,6 +140,15 @@ def map_column(output_data):
     result['vocabulary'] = output_data[15]
     return result
 
+def get_final_sentiment(model_prediction):
+    sentiment_series = pd.Series()
+    if model_prediction['% positive'] > model_prediction['% negative']:
+        sentiment_series['model_sentiment'] = "positive"
+    elif model_prediction['% negative'] > model_prediction['% positive']:
+        sentiment_series['model_sentiment'] = 'negative'
+    else:
+        sentiment_series['model_sentiment'] = 'neutral'
+    return sentiment_series
 if __name__ == '__main__':
     start = dt.datetime.now()
     print(f'\n\n{start.strftime("%c")}\nPROGRAM NAME: {sys.argv[0]}\n')

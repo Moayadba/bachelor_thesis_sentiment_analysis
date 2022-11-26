@@ -1,0 +1,21 @@
+name: finbert
+channels:
+  - pytorch
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter
+  - pandas
+  - python=3.9.13
+  - numpy
+  - nltk
+  - tqdm
+  - ipykernel
+  - transformers
+  - pip:
+    - joblib
+    - scikit-learn
+    - spacy
+    - torch
+    - textblob
