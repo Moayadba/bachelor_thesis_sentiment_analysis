@@ -48,6 +48,68 @@ def print_report(df):
 
     print("-The average number of words per post is: {}".format(avg_num_of_words_per_post))
 
+    # num_days_with_posts_2008 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2008-01-01") & (sentiment_by_day['NY_Day'] <= "2008-12-31")]
+    # num_days_with_posts_2009 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2009-01-01") & (sentiment_by_day['NY_Day'] <= "2009-12-31")]
+    # num_days_with_posts_2010 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2010-01-01") & (sentiment_by_day['NY_Day'] <= "2010-12-31")]
+    # num_days_with_posts_2011 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2011-01-01") & (sentiment_by_day['NY_Day'] <= "2011-12-31")]
+    # num_days_with_posts_2012 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2012-01-01") & (sentiment_by_day['NY_Day'] <= "2012-12-31")]
+    # num_days_with_posts_2013 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2013-01-01") & (sentiment_by_day['NY_Day'] <= "2013-12-31")]
+    # num_days_with_posts_2014 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2014-01-01") & (sentiment_by_day['NY_Day'] <= "2014-12-31")]
+    # num_days_with_posts_2015 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2015-01-01") & (sentiment_by_day['NY_Day'] <= "2015-12-31")]
+    # num_days_with_posts_2016 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2016-01-01") & (sentiment_by_day['NY_Day'] <= "2016-12-31")]
+    # num_days_with_posts_2017 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2017-01-01") & (sentiment_by_day['NY_Day'] <= "2017-12-31")]
+    # num_days_with_posts_2018 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2018-01-01") & (sentiment_by_day['NY_Day'] <= "2018-12-31")]
+    # num_days_with_posts_2019 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2019-01-01") & (sentiment_by_day['NY_Day'] <= "2019-12-31")]
+    # num_days_with_posts_2020 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2020-01-01") & (sentiment_by_day['NY_Day'] <= "2020-12-31")]
+    # num_days_with_posts_2021 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2021-01-01") & (sentiment_by_day['NY_Day'] <= "2021-12-31")]
+    # num_days_with_posts_2022 = sentiment_by_day.loc[
+    #     (sentiment_by_day['NY_Day'] >= "2022-01-01") & (sentiment_by_day['NY_Day'] <= "2022-12-31")]
+    #
+    # num_of_posts_2008 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2008-01-01") & (eval_df_merged['NY_Day'] <= "2008-12-31")]
+    # num_of_posts_2009 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2009-01-01") & (eval_df_merged['NY_Day'] <= "2009-12-31")]
+    # num_of_posts_2010 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2010-01-01") & (eval_df_merged['NY_Day'] <= "2010-12-31")]
+    # num_of_posts_2011 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2011-01-01") & (eval_df_merged['NY_Day'] <= "2011-12-31")]
+    # num_of_posts_2012 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2012-01-01") & (eval_df_merged['NY_Day'] <= "2012-12-31")]
+    # num_of_posts_2013 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2013-01-01") & (eval_df_merged['NY_Day'] <= "2013-12-31")]
+    # num_of_posts_2014 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2014-01-01") & (eval_df_merged['NY_Day'] <= "2014-12-31")]
+    # num_of_posts_2015 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2015-01-01") & (eval_df_merged['NY_Day'] <= "2015-12-31")]
+    # num_of_posts_2016 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2016-01-01") & (eval_df_merged['NY_Day'] <= "2016-12-31")]
+    # num_of_posts_2017 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2017-01-01") & (eval_df_merged['NY_Day'] <= "2017-12-31")]
+    # num_of_posts_2018 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2018-01-01") & (eval_df_merged['NY_Day'] <= "2018-12-31")]
+    # num_of_posts_2019 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2019-01-01") & (eval_df_merged['NY_Day'] <= "2019-12-31")]
+    # num_of_posts_2020 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2020-01-01") & (eval_df_merged['NY_Day'] <= "2020-12-31")]
+    # num_of_posts_2021 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2021-01-01") & (eval_df_merged['NY_Day'] <= "2021-12-31")]
+    # num_of_posts_2022 = eval_df_merged.loc[
+    #     (eval_df_merged['NY_Day'] >= "2022-01-01") & (eval_df_merged['NY_Day'] <= "2022-12-31")]
+
     fig,ax = plt.subplots()
     # make a plot
     ax.plot(posts_distribution_over_time_df['posting_date'],

@@ -9,7 +9,7 @@ import sys
 # path of the file with posts you want to predict the sentiment for
 INPUT_FILE_PATH = '/Users/baset/Desktop/Kursanis Thesis/Datasets/validatation/GME_final_validation_sample_equal_dist_3.csv'
 # path of the file with posts you want to write the predictions to
-OUTPUT_FILE_PATH = '/Users/baset/Downloads/GME_final_validation_sample_equal_dist_prediction_lexicon.csv'
+OUTPUT_FILE_PATH = '/Users/baset/Downloads/GME_final_validation_sample_equal_dist_prediction_bert.csv'
 # path of the pre-trained model file
 MODEL_FILE_PATH = "/Users/baset/PycharmProjects/sentiment_analysis_all_models/finBERT/models/sentiment/FinPhraseBank"
 

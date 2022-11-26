@@ -37,7 +37,8 @@ the existing copy of the LM dictionary was downloaded form [this link](https://s
 
 * edited the variables for the input and output files paths in `/sentiment_analysis_all_models/Lexicon/predict_df_lexicon.py`
 
-run the file for getting predictions with:
+
+* run the file for getting predictions with:
 
 ```
 python3 predict_df_lexicon.py
@@ -57,7 +58,8 @@ for running the code:
 * Put a copy of `config.json` in this same directory. 
 * edited the variables for the input and output files paths and the model file path in `/sentiment_analysis_all_models/finBERT/scripts/predict_df_bert.py`
 
-run the file for getting predictions with:
+
+* run the file for getting predictions with:
 
 ```
 python3 predict_df_bert.py
@@ -69,7 +71,7 @@ to use GPT-3 from Open AI you need to do the following steps:
 
 1- create an account at [openAI](https://beta.openai.com/docs/introduction)
 
-2- Set your `OPENAI_API_KEY` environment, execute the following command in terminal:
+2- Set your `OPENAI_API_KEY` environment variable, execute the following command in terminal:
 ```
 export OPENAI_API_KEY="<OPENAI_API_KEY>"
 ```
@@ -81,13 +83,16 @@ export OPENAI_API_KEY="<OPENAI_API_KEY>"
 OPENAI_API_KEY=XXXX
 ORG_ID=XXXX
 ```
-5-prepare your training dataset by using the script "GPT-3/prepare_training_examples.py"
+5-prepare your training dataset by using the script:
 
-6- convert the csv file to .json using OpenAI CLI tool, execute the following command in terminal:
+`GPT-3/prepare_training_examples.py`
+
+6- convert the .csv file to .json format using OpenAI CLI tool.
+To do so, execute the following command in terminal:
 ```
-penai tools fine_tunes.prepare_data -f <your prepared training .csv file>
+openai tools fine_tunes.prepare_data -f <your training .csv file after preperation>
 ```
-7-use OpenAI CLI tool to create a fine-tuned model, execute the following command in terminal:
+7-use OpenAI CLI tool to create a fine-tuned model, by executing the following command in terminal:
 ```
 openai api fine_tunes.create -t <TRAIN_FILE_ID_OR_PATH> -m <BASE_MODEL>
 ```
@@ -110,6 +115,11 @@ to test the performance of the model, run the following script after editing the
 ```
 python3 evaluate_model.py
 ```
-the script will print a confusion matrix and classification report
+the script will print out the confusion matrix and the classification report
 
 ## Study the correlation
+
+to calculate the correlation for the complete time period and the pre,intra and post-mania period, run the following script:
+```
+python3 correlation.py
+```

@@ -4,7 +4,7 @@ from utils.correlation_utils import fill_missing_dates
 from utils.correlation_utils import get_historical_stock_data
 
 # variables
-original_reddit_file_location = "../row_data/GME_v2_row.csv"
+original_reddit_file_location = "../row_data/GME_row.csv"
 original_stock_data_location = "../row_data/GME_stock_price_graph.csv"
 stock_ticker = "GME"
 
